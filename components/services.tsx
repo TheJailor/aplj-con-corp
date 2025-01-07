@@ -53,15 +53,15 @@ export default function Services() {
       });
     });
 
-    if (servicesRef.current) {
-      // Select all service items and observe them
-      const serviceItems = servicesRef.current.querySelectorAll('.animate-on-scroll');
+    const currentServicesRef = servicesRef.current;
+    if (currentServicesRef) {
+      const serviceItems = currentServicesRef.querySelectorAll('.animate-on-scroll');
       serviceItems.forEach((item) => observer.observe(item));
     }
 
     return () => {
-      if (servicesRef.current) {
-        const serviceItems = servicesRef.current.querySelectorAll('.animate-on-scroll');
+      if (currentServicesRef) {
+        const serviceItems = currentServicesRef.querySelectorAll('.animate-on-scroll');
         serviceItems.forEach((item) => observer.unobserve(item));
       }
     };
@@ -97,7 +97,6 @@ export default function Services() {
               key={index}
               className="group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-sm flex flex-col animate-on-scroll translate-y-10 opacity-0 transition-all duration-1000 ease-out shadow-lg hover:scale-105 hover:shadow-xl transform transition-all duration-150"
             >
-              {/* Image Section */}
               <div className="aspect-square relative">
                 <Image
                   src={service.image}
@@ -107,20 +106,13 @@ export default function Services() {
                 />
                 <div className="absolute inset-0 bg-black/40" />
               </div>
-
-              {/* Content Section */}
               <div className="p-6 flex flex-col justify-between flex-1">
-                {/* Title */}
                 <h3 className="text-xl font-bold text-white mb-2">
                   {service.title}
                 </h3>
-
-                {/* Description */}
                 <p className="text-white/90 text-sm line-clamp-2 italic mb-4">
                   {service.description}
                 </p>
-
-                {/* Link */}
                 <Link
                   href={service.link}
                   className="inline-flex items-center text-[#FFB800] hover:text-white transition-colors font-bold"

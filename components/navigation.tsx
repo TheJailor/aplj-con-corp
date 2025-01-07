@@ -19,14 +19,15 @@ export default function Navigation() {
       });
     });
 
-    if (navRef.current) {
-      const animatedElements = navRef.current.querySelectorAll('.animate-on-scroll');
+    const currentNavRef = navRef.current;
+    if (currentNavRef) {
+      const animatedElements = currentNavRef.querySelectorAll('.animate-on-scroll');
       animatedElements.forEach((element) => observer.observe(element));
     }
 
     return () => {
-      if (navRef.current) {
-        const animatedElements = navRef.current.querySelectorAll('.animate-on-scroll');
+      if (currentNavRef) {
+        const animatedElements = currentNavRef.querySelectorAll('.animate-on-scroll');
         animatedElements.forEach((element) => observer.unobserve(element));
       }
     };
@@ -38,7 +39,6 @@ export default function Navigation() {
       className="absolute top-0 left-0 right-0 z-10 px-4 py-6"
     >
       <div className="container mx-auto flex items-center justify-between">
-        {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 animate-on-scroll">
           <Image
             src="/APLJ_transparent.png"
@@ -49,8 +49,6 @@ export default function Navigation() {
           />
           <span className="text-lg font-bold text-[#003B5C]">APLJ Construction Corp</span>
         </Link>
-
-        {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-8">
           <Link
             href="#services"
