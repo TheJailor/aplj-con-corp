@@ -1,46 +1,90 @@
 'use client'
 
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ArrowRightIcon } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { setupIntersectionObserver } from '@/utils/animation';
+import ServicePopup from './ServicePopup';
 
-const services = [
+interface Service {
+  title: string;
+  description: string;
+  image: string;
+  details: string[];
+  images: string[];
+}
+
+const services: Service[] = [
   {
     title: 'General Construction',
     description: 'Building reliable structures with precision and quality.',
     image: '/genconst.jpg',
-    link: '#',
+    details: [
+      'Commercial and Residential Construction',
+      'Project Management',
+      'Site Preparation and Excavation',
+      'Structural Engineering',
+      'Building Information Modeling (BIM)'
+    ],
+    images: ['/genconst.jpg', '/genconst2.jpg', '/genconst3.jpg'],
   },
   {
     title: 'Engineering and Architectural Design',
     description: 'Crafting innovative and functional designs tailored to your needs.',
     image: '/EngineeringAndArchitecturalDesign.jpg',
-    link: '#',
+    details: [
+      'Architectural Design',
+      'Structural Engineering',
+      'MEP (Mechanical, Electrical, Plumbing) Design',
+      'Sustainable Design Solutions',
+      '3D Modeling and Visualization'
+    ],
+    images: ['/EngineeringAndArchitecturalDesign.jpg', '/EngineeringAndArchitecturalDesign2.jpg', '/EngineeringAndArchitecturalDesign3.jpg'],
   },
   {
     title: 'Fit-Out Works',
     description: 'Transforming spaces into fully functional and aesthetic environments.',
     image: '/fitoutworks.png',
-    link: '#',
+    details: [
+      'Office Fit-Outs',
+      'Retail Space Customization',
+      'Restaurant and Hospitality Fit-Outs',
+      'Industrial Facility Fit-Outs',
+      'Sustainable Fit-Out Solutions'
+    ],
+    images: ['/fitoutworks.png', '/fitoutworks2.png', '/fitoutworks3.png'],
   },
   {
     title: 'Renovation and Restoration',
     description: 'Reviving and upgrading spaces with care and expertise.',
     image: '/RenovationAndRestoration.jpg',
-    link: '#',
+    details: [
+      'Roofing and Wall Finishes',
+      'Painting & Repainting Works',
+      'Waterproofing Works',
+      'General Electrical Works',
+      'Plumbing, Piping & Sanitary Lines'
+    ],
+    images: ['/RenovationAndRestoration.jpg', '/RenovationAndRestoration2.jpg', '/RenovationAndRestoration3.jpg'],
   },
   {
     title: 'Interior Design',
     description: 'Creating stunning interiors that inspire and elevate daily living.',
     image: '/InteriorDesign.jpg',
-    link: '#',
+    details: [
+      'Residential Interior Design',
+      'Commercial Interior Design',
+      'Space Planning and Layout',
+      'Custom Furniture Design',
+      'Color and Material Selection'
+    ],
+    images: ['/InteriorDesign.jpg', '/InteriorDesign2.jpg', '/InteriorDesign3.jpg'],
   },
 ];
 
 export default function Services() {
   const servicesRef = useRef<HTMLElement>(null);
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
 
   useEffect(() => {
     const observer = setupIntersectionObserver((entries) => {
@@ -48,7 +92,7 @@ export default function Services() {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fade-in');
           entry.target.classList.remove('translate-y-10', 'opacity-0');
-          observer.unobserve(entry.target); // Stop observing after animation
+          observer.unobserve(entry.target);
         }
       });
     });
@@ -113,17 +157,24 @@ export default function Services() {
                 <p className="text-white/90 text-sm line-clamp-2 italic mb-4">
                   {service.description}
                 </p>
-                <Link
-                  href={service.link}
+                <button
+                  onClick={() => setSelectedService(service)}
                   className="inline-flex items-center text-[#FFB800] hover:text-white transition-colors font-bold"
                 >
                   Learn More <ArrowRightIcon className="ml-2 h-4 w-4" />
-                </Link>
+                </button>
               </div>
             </div>
           ))}
         </div>
       </div>
+      {selectedService && (
+        <ServicePopup
+          service={selectedService}
+          onClose={() => setSelectedService(null)}
+        />
+      )}
     </section>
   );
 }
+
