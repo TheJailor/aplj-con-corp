@@ -33,7 +33,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-extrabold text-[#FFB800] mb-4">Follow Us</h3>
             <div className="flex space-x-6">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/profile.php?id=61571843121604" target="_blank" rel="noopener noreferrer">
                 <FacebookIcon className="h-8 w-8 hover:text-[#FFB800] transition-colors" />
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
