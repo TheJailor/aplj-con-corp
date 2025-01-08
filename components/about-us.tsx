@@ -67,9 +67,9 @@ export default function AboutUs() {
                 className="rounded-lg shadow-lg"
               />
               <div>
-                <h4 className="text-xl font-semibold text-[#003B5C] mb-2">John Doe</h4>
+                <h4 className="text-xl font-semibold text-[#003B5C] mb-2">Jun Lobitos</h4>
                 <p className="text-lg mb-4">
-                  With over 25 years of experience in the construction industry, John Doe 
+                  With multiple years of experience and numerous clients in the construction industry, Jun Lobitos
                   leads APLJ Construction Corp with a vision for innovation and excellence. 
                   His commitment to quality and client satisfaction has been the driving 
                   force behind our company&apos;s success.
