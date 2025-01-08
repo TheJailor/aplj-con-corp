@@ -47,12 +47,12 @@ export default function AboutUs() {
           <div className="animate-on-scroll translate-y-10 opacity-0 transition-all duration-1000 ease-out delay-300">
             <h3 className="text-2xl font-bold text-[#003B5C] mb-4">Our Mission</h3>
             <p className="text-lg mb-6">
-              To deliver exceptional construction services that exceed client&apos;s expectation through our integrity, safety and provisions of quality and affordable services.
+                Our mission is to provide the best quality and high standard services in construction industry. Exceeding our client&apos;s expectation through our integrity, safety and provisions of quality and affordable services.
             </p>
             
             <h3 className="text-2xl font-bold text-[#003B5C] mb-4">Our Vision</h3>
             <p className="text-lg">
-              APLJ CONSTRUCTIONS CORPORATION&apos;s vision is to be recognized as one of the leading construction companies in the country by promoting a good relationship with our clients, together with the employer and construction workers. To deliver superior construction work performance and live our company values.
+              Our vision is to be recognized as one of the leading construction companies in the country by promoting a good relationship with our clients, together with the employer and construction workers. To deliver superior construction work performance and live our company values.
             </p>
           </div>
           
