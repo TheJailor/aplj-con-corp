@@ -60,7 +60,7 @@ export default function AboutUs() {
             <h3 className="text-2xl font-bold text-[#003B5C] mb-4">Meet Our CEO</h3>
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
               <Image
-                src="/ceo.jpg"
+                src="/CEO.jpg"
                 alt="CEO of APLJ Construction Corp"
                 width={200}
                 height={300}
