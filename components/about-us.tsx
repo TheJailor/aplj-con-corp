@@ -47,12 +47,12 @@ export default function AboutUs() {
           <div className="animate-on-scroll translate-y-10 opacity-0 transition-all duration-1000 ease-out delay-300">
             <h3 className="text-2xl font-bold text-[#003B5C] mb-4">Our Mission</h3>
             <p className="text-lg mb-6">
-                We commit to provide the best quality and high standard services in construction industry. Exceeding our client’s expectation through our integrity, safety and provisions of quality and affordable services.
+              To deliver exceptional construction services that exceed client&apos;s expectation through our integrity, safety and provisions of quality and affordable services.
             </p>
             
             <h3 className="text-2xl font-bold text-[#003B5C] mb-4">Our Vision</h3>
             <p className="text-lg">
-                APLJ CONSTRUCTIONS CORPORATION’s vision is to be recognized as one of the leading construction companies in the country by promoting a good relationship with our clients, together with the employer and construction workers. To deliver superior construction work performance and live our company values.
+              APLJ CONSTRUCTIONS CORPORATION&apos;s vision is to be recognized as one of the leading construction companies in the country by promoting a good relationship with our clients, together with the employer and construction workers. To deliver superior construction work performance and live our company values.
             </p>
           </div>
           
@@ -60,23 +60,23 @@ export default function AboutUs() {
             <h3 className="text-2xl font-bold text-[#003B5C] mb-4">Meet Our CEO</h3>
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
               <Image
-                src="/ceo.jpg"
+                src="/ceo-image.jpg"
                 alt="CEO of APLJ Construction Corp"
                 width={200}
                 height={300}
                 className="rounded-lg shadow-lg"
               />
               <div>
-                <h4 className="text-xl font-semibold text-[#003B5C] mb-2">Jun Lobitos</h4>
+                <h4 className="text-xl font-semibold text-[#003B5C] mb-2">John Doe</h4>
                 <p className="text-lg mb-4">
-                  With multiple years of experience and numerous clients in the construction industry, Jun Lobitos 
+                  With over 25 years of experience in the construction industry, John Doe 
                   leads APLJ Construction Corp with a vision for innovation and excellence. 
                   His commitment to quality and client satisfaction has been the driving 
-                  force behind our company's success.
+                  force behind our company&apos;s success.
                 </p>
                 <p className="text-lg italic">
-                  "Our goal is not just to build structures, but to create lasting value 
-                  for our clients and communities."
+                  &lsquo;Our goal is not just to build structures, but to create lasting value 
+                  for our clients and communities.&rsquo;
                 </p>
               </div>
             </div>
