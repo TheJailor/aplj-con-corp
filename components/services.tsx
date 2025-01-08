@@ -139,7 +139,8 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-sm flex flex-col animate-on-scroll translate-y-10 opacity-0 transition-all duration-1000 ease-out shadow-lg hover:scale-105 hover:shadow-xl transform transition-all duration-150"
+              onClick={() => setSelectedService(service)}
+              className="group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-sm flex flex-col animate-on-scroll translate-y-10 opacity-0 transition-all duration-1000 ease-out shadow-lg hover:scale-105 hover:shadow-xl transform transition-all duration-150 cursor-pointer"
             >
               <div className="aspect-square relative">
                 <Image
@@ -157,12 +158,11 @@ export default function Services() {
                 <p className="text-white/90 text-sm line-clamp-2 italic mb-4">
                   {service.description}
                 </p>
-                <button
-                  onClick={() => setSelectedService(service)}
+                <div
                   className="inline-flex items-center text-[#FFB800] hover:text-white transition-colors font-bold"
                 >
                   Learn More <ArrowRightIcon className="ml-2 h-4 w-4" />
-                </button>
+                </div>
               </div>
             </div>
           ))}
